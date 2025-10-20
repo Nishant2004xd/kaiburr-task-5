@@ -126,7 +126,7 @@ Shape of TF-IDF matrix for training data: (1058796, 10000)
 
 Two models, **Logistic Regression** and **Multinomial Naive Bayes**, were selected and trained.
 
-'''
+```
 --- Step 4: Model Selection & Training ---
 
 Training Logistic Regression model...
@@ -137,7 +137,7 @@ Logistic Regression training complete.
 Training Naive Bayes model...
 Naive Bayes training complete.
 
-'''
+```
 
 ### 4. Comparison of model performance
 
