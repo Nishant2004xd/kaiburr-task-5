@@ -90,4 +90,118 @@ Index(['Date received', 'Product', 'Sub-product', 'Issue', 'Sub-issue',
       dtype='object')
 
 ```
+**Feature Engineering (TF-IDF):**
+```
+Original data shape: (11535877, 18)
+Shape after dropping empty complaints: (3416745, 18)
+Shape after filtering for 4 categories: (1323496, 18)
 
+Data is ready for processing.
+Total samples: 1323496
+
+Category to Number Mapping:
+'Consumer Loan': 0
+'Credit reporting, credit repair services, or other personal consumer reports': 1
+'Debt collection': 2
+'Mortgage': 3
+
+```
+
+### 2. Text Pre-Processing
+
+The raw data was cleaned, filtered, and the labels were encoded.
+```
+Starting text pre-processing and data split...
+Text pre-processing complete.
+Training samples: 1058796
+Testing samples: 264700
+
+Starting TF-IDF vectorization (Feature Engineering)...
+Feature engineering complete.
+Shape of TF-IDF matrix for training data: (1058796, 10000)
+
+```
+
+### 3. Selection of Multi Classification model
+
+Two models, **Logistic Regression** and **Multinomial Naive Bayes**, were selected and trained.
+
+'''
+--- Step 4: Model Selection & Training ---
+
+Training Logistic Regression model...
+/usr/local/lib/python3.12/dist-packages/sklearn/linear_model/_logistic.py:1256: FutureWarning: 'multi_class' was deprecated in version 1.5 and will be removed in 1.7. Use OneVsRestClassifier(LogisticRegression(..)) instead. Leave it to its default value to avoid this warning.
+  warnings.warn(
+Logistic Regression training complete.
+
+Training Naive Bayes model...
+Naive Bayes training complete.
+
+'''
+
+### 4. Comparison of model performance
+
+The two trained models were compared on the test dataset. **Logistic Regression** (90.9% accuracy) performed better than Naive Bayes (87.7% accuracy).
+
+```
+--- Step 5: Model Comparison & Evaluation ---
+
+--- Logistic Regression Evaluation ---
+Accuracy: 0.9091
+
+Classification Report:
+                                                                              precision    recall  f1-score   support
+
+                                                               Consumer Loan       0.73      0.30      0.42      1892
+Credit reporting, credit repair services, or other personal consumer reports       0.92      0.95      0.93    161456
+                                                             Debt collection       0.88      0.84      0.86     74380
+                                                                    Mortgage       0.92      0.93      0.93     26972
+
+                                                                    accuracy                           0.91    264700
+                                                                   macro avg       0.86      0.75      0.78    264700
+                                                                weighted avg       0.91      0.91      0.91    264700
+
+
+--- Naive Bayes Evaluation ---
+Accuracy: 0.8769
+
+Classification Report:
+                                                                              precision    recall  f1-score   support
+
+                                                               Consumer Loan       0.45      0.27      0.34      1892
+Credit reporting, credit repair services, or other personal consumer reports       0.90      0.92      0.91    161456
+                                                             Debt collection       0.85      0.77      0.81     74380
+                                                                    Mortgage       0.82      0.95      0.88     26972
+
+                                                                    accuracy                           0.88    264700
+                                                                   macro avg       0.75      0.73      0.73    264700
+                                                                weighted avg       0.88      0.88      0.87    264700
+
+
+```
+
+### 5. Model Evaluation
+
+The detailed **Classification Reports** above serve as the evaluation for both models. Based on the higher accuracy and weighted F1-score, the **Logistic Regression** model was selected as the final, superior model for this task.
+
+### 6. Prediction
+
+The trained Logistic Regression model was used to predict the categories of four new, unseen sample complaints.
+
+```
+--- Step 6: Prediction ---
+Predicting categories for 4 new complaints...
+
+Complaint: "I checked my credit report and there is an account that does not belong to me!"
+--> Predicted Category: Credit reporting, credit repair services, or other personal consumer reports
+
+Complaint: "A company keeps calling my cell phone trying to collect a debt that I already paid off."
+--> Predicted Category: Debt collection
+
+Complaint: "My application for a car loan was denied, and I don't know why."
+--> Predicted Category: Credit reporting, credit repair services, or other personal consumer reports
+
+Complaint: "I am having an issue with my mortgage escrow account, the payment is wrong."
+--> Predicted Category: Mortgage
+
+```
