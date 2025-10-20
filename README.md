@@ -10,8 +10,12 @@ Here is the console output for each of the 6 required steps.
 
 ### 1. Explanatory Data Analysis and Feature Engineering
 
+**Explanatory Data Analysis (EDA):**
+
+```
+
 First, the data was loaded, analyzed, and engineered into numerical features.
-'''bash
+
 Loading dataset... this may take a minute.
 Dataset loaded successfully!
   Date received                                            Product  \
@@ -85,6 +89,5 @@ Index(['Date received', 'Product', 'Sub-product', 'Issue', 'Sub-issue',
        'Timely response?', 'Consumer disputed?', 'Complaint ID'],
       dtype='object')
 
-'''
+```
 
-**Explanatory Data Analysis (EDA):**
