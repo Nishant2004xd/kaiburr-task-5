@@ -11,7 +11,7 @@ Here is the console output for each of the 6 required steps.
 ### 1. Explanatory Data Analysis and Feature Engineering
 
 First, the data was loaded, analyzed, and engineered into numerical features.
-'''
+'''bash
 Loading dataset... this may take a minute.
 Dataset loaded successfully!
   Date received                                            Product  \
