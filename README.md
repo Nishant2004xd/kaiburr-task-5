@@ -12,10 +12,9 @@ Here is the console output for each of the 6 required steps.
 
 **Explanatory Data Analysis (EDA):**
 
-```
-
 First, the data was loaded, analyzed, and engineered into numerical features.
 
+```
 Loading dataset... this may take a minute.
 Dataset loaded successfully!
   Date received                                            Product  \
