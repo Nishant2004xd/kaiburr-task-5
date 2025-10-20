@@ -2,6 +2,14 @@
 
 This repository contains the documentation and console output for Task 5. The entire analysis was performed in Python using Google Colab. The goal was to build a multi-class text classification model to categorize consumer complaints into one of four product categories.
 
+# Steps to run the task
+
+1. Download the kaiburr_task_5.ipynb file from this repository.
+2. Go to Google Colab and sign in.
+3. Click on File > Upload notebook... and select the .ipynb file you just downloaded.
+4. Once the notebook is open, click on Runtime > Run all from the top menu.
+5. The notebook will automatically download the dataset, install any necessary libraries, and run all 6 analysis steps, reproducing the output shown below.
+
 ---
 
 ## Project Workflow & Output
