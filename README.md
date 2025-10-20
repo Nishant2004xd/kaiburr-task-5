@@ -1,38 +1,90 @@
 # Kaiburr Assessment - Task 5: Data Science (Text Classification)
 
-This is a repository that holds the documentation and findings of Task 5. All analysis was done in Python via Google Colab and the original.ipynb notebook file is contained herein this repository.
-
-This was to create a multi-class text classification model, which could group the consumer complaints into one of four product sets as stated in the assessment.
+This repository contains the documentation and console output for Task 5. The entire analysis was performed in Python using Google Colab. The goal was to build a multi-class text classification model to categorize consumer complaints into one of four product categories.
 
 ---
 
-## Summary of Steps
+## Project Workflow & Output
 
-The project was implemented in accordance with the 6 steps identified in the task instructions:
+Here is the console output for each of the 6 required steps.
 
-1. **Explanatory Data Analysis: The complaints.csv.zip file was directly loaded into a pandas DataFrame. The most important were identified including the columns- Product (the category) and Consumer complaint narrative (the text).
-2. **Text Pre-Processing: the data was sanitized by eliminating rows that had empty complaints in them. It was subsequently filtered as to only the four target categories. A preprocess text function was developed to transform text to lower case and strip text of punctuations and digits.
-3. **Feature Engineering: The text after cleaning was divided into an 80 training set and a 20 testing set. The text was converted to a numerical matrix of 10,000 features with a `TfidfVectorizer` and English stop words were automatically eliminated.
-4. **Choosing Multi-Classification model: Two models have been chosen to be compared, namely: **Logistic Regression (with multi_class=ovr) and Multinomial Naive Bayes.
-5. **Comparison and Model Assessment: Both models were trained using TF-IDF matrix. The reason for choosing the Logistic regression model of 90.9 percent is because it is the best and beats the Naive bayes model that has 87.7 percent accuracy.
-6. Prediction: The categories of new, unseen strings of complaint were successfully predicted with the help of the trained Logistic Regression model.
+### 1. Explanatory Data Analysis and Feature Engineering
 
----
+First, the data was loaded, analyzed, and engineered into numerical features.
+'''
+Loading dataset... this may take a minute.
+Dataset loaded successfully!
+  Date received                                            Product  \
+0    2020-07-06  Credit reporting, credit repair services, or o...   
+1    2025-10-14  Credit reporting or other personal consumer re...   
+2    2025-10-10  Credit reporting or other personal consumer re...   
+3    2025-10-15  Credit reporting or other personal consumer re...   
+4    2025-10-17  Credit reporting or other personal consumer re...   
 
-## Colab Screenshot Proof
+        Sub-product                                 Issue  \
+0  Credit reporting  Incorrect information on your report   
+1  Credit reporting  Incorrect information on your report   
+2  Credit reporting  Incorrect information on your report   
+3  Credit reporting  Incorrect information on your report   
+4  Credit reporting  Incorrect information on your report   
 
-### 1. Data Loading & EDA
+                                           Sub-issue  \
+0                Information belongs to someone else   
+1  Information is missing that should be on the r...   
+2                Information belongs to someone else   
+3                Information belongs to someone else   
+4                Information belongs to someone else   
 
-(Insert your "Data Loading" screenshot into here)
+  Consumer complaint narrative  \
+0                          NaN   
+1                          NaN   
+2                          NaN   
+3                          NaN   
+4                          NaN   
 
-### 2. Data Filtering & Preparation
+                             Company public response  \
+0  Company has responded to the consumer and the ...   
+1                                                NaN   
+2                                                NaN   
+3                                                NaN   
+4                                                NaN   
 
-(Insert your "Data Filtration" screenshot in this box)
+                                  Company State ZIP code Tags  \
+0     Experian Information Solutions Inc.    FL    346XX  NaN   
+1                           EQUIFAX, INC.    TX    75062  NaN   
+2                           EQUIFAX, INC.    GA    30341  NaN   
+3  TRANSUNION INTERMEDIATE HOLDINGS, INC.    TX    75287  NaN   
+4  TRANSUNION INTERMEDIATE HOLDINGS, INC.    NC    27127  NaN   
 
-### 3. Model Evaluation (Step 5)
+  Consumer consent provided? Submitted via Date sent to company  \
+0                      Other           Web           2020-07-06   
+1                        NaN           Web           2025-10-14   
+2                        NaN           Web           2025-10-10   
+3                        NaN           Web           2025-10-15   
+4                        NaN           Web           2025-10-17   
 
-(Insert your screenshot of the "Model Evaluation" here)
+  Company response to consumer Timely response? Consumer disputed?  \
+0      Closed with explanation              Yes                NaN   
+1                  In progress              Yes                NaN   
+2                  In progress              Yes                NaN   
+3                  In progress              Yes                NaN   
+4                  In progress              Yes                NaN   
 
-### 4. Final Prediction (Step 6)
+   Complaint ID  
+0       3730948  
+1      16558024  
+2      16507707  
+3      16593757  
+4      16649455  
 
-(Place your "Prediction" screenshot here)
+Column Names:
+Index(['Date received', 'Product', 'Sub-product', 'Issue', 'Sub-issue',
+       'Consumer complaint narrative', 'Company public response', 'Company',
+       'State', 'ZIP code', 'Tags', 'Consumer consent provided?',
+       'Submitted via', 'Date sent to company', 'Company response to consumer',
+       'Timely response?', 'Consumer disputed?', 'Complaint ID'],
+      dtype='object')
+
+'''
+
+**Explanatory Data Analysis (EDA):**
