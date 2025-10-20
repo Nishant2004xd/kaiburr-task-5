@@ -127,7 +127,6 @@ Shape of TF-IDF matrix for training data: (1058796, 10000)
 Two models, **Logistic Regression** and **Multinomial Naive Bayes**, were selected and trained.
 
 ```
---- Step 4: Model Selection & Training ---
 
 Training Logistic Regression model...
 /usr/local/lib/python3.12/dist-packages/sklearn/linear_model/_logistic.py:1256: FutureWarning: 'multi_class' was deprecated in version 1.5 and will be removed in 1.7. Use OneVsRestClassifier(LogisticRegression(..)) instead. Leave it to its default value to avoid this warning.
@@ -144,7 +143,6 @@ Naive Bayes training complete.
 The two trained models were compared on the test dataset. **Logistic Regression** (90.9% accuracy) performed better than Naive Bayes (87.7% accuracy).
 
 ```
---- Step 5: Model Comparison & Evaluation ---
 
 --- Logistic Regression Evaluation ---
 Accuracy: 0.9091
@@ -189,7 +187,6 @@ The detailed **Classification Reports** above serve as the evaluation for both m
 The trained Logistic Regression model was used to predict the categories of four new, unseen sample complaints.
 
 ```
---- Step 6: Prediction ---
 Predicting categories for 4 new complaints...
 
 Complaint: "I checked my credit report and there is an account that does not belong to me!"
