@@ -13,6 +13,8 @@ Here is the console output for each of the 6 required steps.
 **Explanatory Data Analysis (EDA):**
 
 First, the data was loaded, analyzed, and engineered into numerical features.
+<img width="959" height="509" alt="image" src="https://github.com/user-attachments/assets/b07fc14d-f519-4821-a246-8d9d27e2ff12" />
+<img width="959" height="509" alt="image" src="https://github.com/user-attachments/assets/17f2bb96-ab91-4b7c-8401-4311b53226ab" />
 
 ```
 Loading dataset... this may take a minute.
@@ -90,6 +92,8 @@ Index(['Date received', 'Product', 'Sub-product', 'Issue', 'Sub-issue',
 
 ```
 **Feature Engineering (TF-IDF):**
+<img width="959" height="509" alt="image" src="https://github.com/user-attachments/assets/32a1b71b-cc09-4a5e-945e-db833be6c91a" />
+
 ```
 Original data shape: (11535877, 18)
 Shape after dropping empty complaints: (3416745, 18)
@@ -109,6 +113,8 @@ Category to Number Mapping:
 ### 2. Text Pre-Processing
 
 The raw data was cleaned, filtered, and the labels were encoded.
+<img width="959" height="511" alt="image" src="https://github.com/user-attachments/assets/ecf544d8-22ca-4b70-b33b-341106d52546" />
+
 ```
 Starting text pre-processing and data split...
 Text pre-processing complete.
@@ -124,6 +130,7 @@ Shape of TF-IDF matrix for training data: (1058796, 10000)
 ### 3. Selection of Multi Classification model
 
 Two models, **Logistic Regression** and **Multinomial Naive Bayes**, were selected and trained.
+<img width="959" height="511" alt="image" src="https://github.com/user-attachments/assets/4b2bb627-552c-4881-b94e-536e5ca9cda0" />
 
 ```
 
@@ -140,6 +147,7 @@ Naive Bayes training complete.
 ### 4. Comparison of model performance
 
 The two trained models were compared on the test dataset. **Logistic Regression** (90.9% accuracy) performed better than Naive Bayes (87.7% accuracy).
+<img width="958" height="508" alt="image" src="https://github.com/user-attachments/assets/9b5d4933-8838-419d-9c00-7f74c9e43540" />
 
 ```
 
@@ -184,6 +192,7 @@ The detailed **Classification Reports** above serve as the evaluation for both m
 ### 6. Prediction
 
 The trained Logistic Regression model was used to predict the categories of four new, unseen sample complaints.
+<img width="957" height="509" alt="image" src="https://github.com/user-attachments/assets/ad8ef268-ac12-493e-9116-98533218d462" />
 
 ```
 Predicting categories for 4 new complaints...
